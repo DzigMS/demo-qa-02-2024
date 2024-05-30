@@ -1,7 +1,7 @@
 package org.example.selectors;
 
 public interface ButtonPageProperty {
-    String PATH = "/buttons";
+    String PATH = "buttons";
 
     String DOUBLE_CLICK_BUTTON = "doubleClickBtn";
     String RIGHT_CLICK_BUTTON = "rightClickBtn";

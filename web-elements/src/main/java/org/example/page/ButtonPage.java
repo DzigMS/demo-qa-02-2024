@@ -32,13 +32,15 @@ public class ButtonPage extends BasePage {
     }
 
     public void doubleClickDoubleClickButton() {
-        doubleClickButton.click();
-        doubleClickButton.click();
+        Actions action = new Actions(getDriver());
+        action.doubleClick(doubleClickButton);
+        action.perform();
     }
 
     public void rightClickRightClickButton() {
         Actions action = new Actions(getDriver());
         action.contextClick(rightClickButton);
+        action.perform();
     }
 
     public String getDoubleClickMessage() {
