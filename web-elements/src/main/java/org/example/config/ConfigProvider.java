@@ -36,4 +36,8 @@ public class ConfigProvider {
         Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
         return driver;
     }
+
+    public String getBaseUrl() {
+        return properties.getProperty("base.url");
+    }
 }
