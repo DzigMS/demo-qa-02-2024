@@ -3,6 +3,7 @@ package org.example.page;
 import org.example.selectors.ButtonPageProperty;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
@@ -32,13 +33,15 @@ public class ButtonPage extends BasePage {
     }
 
     public void doubleClickDoubleClickButton() {
-        doubleClickButton.click();
-        doubleClickButton.click();
+        Actions action = new Actions(getDriver());
+        action.doubleClick(doubleClickButton);
+        action.perform();
     }
 
     public void rightClickRightClickButton() {
         Actions action = new Actions(getDriver());
         action.contextClick(rightClickButton);
+        action.perform();
     }
 
     public String getDoubleClickMessage() {
