@@ -31,13 +31,17 @@ public class ConfigProvider {
             default -> throw new RuntimeException("Undefined web driver");
         };
 
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Long.parseLong(properties.getProperty("implicitly.wait"))));
+        driver.manage()
+                .window()
+                .maximize();
+        driver.manage()
+                .timeouts()
+                .implicitlyWait(Duration.ofSeconds(Long.parseLong(properties.getProperty("implicitly.wait"))));
         Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
         return driver;
     }
 
-    public String getBaseUrl() {
+    public static String getBaseUrl() {
         return properties.getProperty("base.url");
     }
 }
